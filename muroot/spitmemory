@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while(true); do 
+  ps aux | grep "[t]estcpp" | awk '{print $6}'; 
+  sleep 2; 
+done
