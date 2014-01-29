@@ -2,3 +2,6 @@
 *.so
 DemoDouble32.root
 *.swp
+
+*ACLiC*
+AutoDict*

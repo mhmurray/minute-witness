@@ -70,18 +70,28 @@ private:
    vector<Double32_t> fVI16;    //[-pi,pi,16]    saved as a 16 bit unsigned int
    vector<Double32_t> fVI8;    //[-pi,pi,8]    saved as a 8 bit unsigned int
    vector<Double32_t> fVI4;    //[-pi,pi,4]    saved as a 4 bit unsigned int
+   vector<Int_t> fVI;
 
-   static const int kNVectorEntries=100;
+   static const int kNVectorEntries=100; //!
 
 
 public:
    DemoDouble32() {;}
    void Set(vector<Double_t>& ref);
+
+   ClassDef(DemoDouble32,1)
 };
+
+#if !defined(__CINT__)
+ClassImp(DemoDouble32);
+#endif
 
 void DemoDouble32::Set(vector<Double_t>& ref) {
    fVD64.clear();
    for(int i=0; i<ref.size(); i++) { fVD64.push_back(ref[i]); }
+
+   fVI.clear();
+   for(int i=0; i<ref.size(); i++) { fVI.push_back(int(ref[i])); }
 
    vector<Double32_t> vectors[] = {fVF32, fVI32, fVI16, fVI8, fVI4};
    int n_vectors = sizeof(vectors)/sizeof(vector<Double32_t>);
@@ -181,5 +191,9 @@ void double32() {
 }
    
    
-   
-       
+#if defined(__MAKECINT__)
+#pragma link C++ class DemoDouble32;
+#pragma link C++ class std::vector<Double32_t>;
+#pragma link C++ class std::vector<Double_t>;
+#pragma link C++ class std::vector<Int_t>;
+#endif
