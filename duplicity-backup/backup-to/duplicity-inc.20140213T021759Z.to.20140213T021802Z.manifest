@@ -1,0 +1,6 @@
+Hostname mercury
+Localdir backup-from
+Volume 1:
+    StartingPath   dir1/file11  
+    EndingPath     dir2/dir21/file212  
+    Hash SHA1 b2fb43e86c150f390a119448ad2dd7d30305a1fa
