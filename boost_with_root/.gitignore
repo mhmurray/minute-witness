@@ -1,0 +1,11 @@
+# ROOT
+*.root
+*.rootmap
+DataClassesDict.h
+DataClassesDict.cpp
+
+# C++
+*.d
+*.so
+*.o
+
